@@ -4,6 +4,7 @@ $(document).ready(function(){
   var minutes = $('#minutes');
   var seconds = $('#seconds');
   var breakBtn = $('#break');
+  var countdown;
 
   start.on('click', startCountdown);
   breakBtn.on('click', takeABreak);
