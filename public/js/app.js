@@ -26,6 +26,7 @@ $(document).ready(function(){
       minutes.text('05');
       seconds.text('00');
       startCountdown();
+
     }
 
   function startCountdown(){
@@ -36,6 +37,7 @@ $(document).ready(function(){
        breakBtn.removeClass('disabled');
        breakBtn.removeAttr('disabled');
        clearInterval(countdown);
+       alert("Your 25 min work flow is now over, please click the break button to take a five minute break.");
        return;
      }
 
@@ -50,6 +52,8 @@ $(document).ready(function(){
         }
 
       }
+
+
 
 
 
