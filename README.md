@@ -21,6 +21,5 @@ I am building a timer web application using:
   sets to 5 minutes and begins counting down.
   8. As a user, I see a 'pause' button.
   9. As a user, when the 'pause' button is clicked, it stops the timer.
-  10. As a user, when the 'pause' button is clicked a second time it resumes the timer.
-  11. As a user, I see a 'reset' button.
-  12. As a user, when I click 'reset' the timer is set back to '25:00'.
+  10. As a user, I see a 'reset' button.
+  11. As a user, when I click 'reset' the timer is set back to '25:00'.
