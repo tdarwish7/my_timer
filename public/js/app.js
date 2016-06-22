@@ -6,10 +6,17 @@ $(document).ready(function(){
   var breakBtn = $('#break');
   var pauseBtn = $('#pause');
   var countdown;
+  var rstBtn = $('#reset');
 
   start.on('click', startCountdown);
   breakBtn.on('click', takeABreak);
   pauseBtn.on('click', pausetimer);
+  rstBtn.on('click', resetTimer);
+
+    function resetTimer(){
+      minutes.text('25');
+      seconds.text('00');
+    }
 
     function pausetimer(){
       clearInterval(countdown);
@@ -23,8 +30,8 @@ $(document).ready(function(){
 
   function startCountdown(){
        countdown = setInterval(function(){
-      var secondsVal = +seconds.text();
-      var minutesVal = +minutes.text();
+       var secondsVal = +seconds.text();
+       var minutesVal = +minutes.text();
      if(secondsVal === 0 && minutesVal === 0){
        breakBtn.removeClass('disabled');
        breakBtn.removeAttr('disabled');
@@ -44,7 +51,7 @@ $(document).ready(function(){
 
       }
 
-    console.log("meadfkjn!!!")
+
 
     }, 1000);
   }
