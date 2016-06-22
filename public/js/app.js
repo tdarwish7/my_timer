@@ -23,13 +23,14 @@ $(document).ready(function(){
     }
 
     function takeABreak(){
-      minutes.text('05');
-      seconds.text('00');
-      startCountdown();
+      minutes.text('00');
+      seconds.text('03');
+      startCountdown('The break is over!');
 
     }
 
-  function startCountdown(){
+  function startCountdown(msg){
+    // by adding msg I made '
        countdown = setInterval(function(){
        var secondsVal = +seconds.text();
        var minutesVal = +minutes.text();
@@ -37,9 +38,17 @@ $(document).ready(function(){
        breakBtn.removeClass('disabled');
        breakBtn.removeAttr('disabled');
        clearInterval(countdown);
-       alert("Your 25 min work flow is now over, please click the break button to take a five minute break.");
+       if( typeof msg === 'string'){
+          alert(msg);
+       } else {
+          alert("The timer is finished, click break to take a five minute break.");
+
+       }
        return;
      }
+
+
+
 
       if(secondsVal === 0){
         minutes.text(minutesVal -1);
@@ -52,6 +61,8 @@ $(document).ready(function(){
         }
 
       }
+
+
 
 
 
