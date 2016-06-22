@@ -4,10 +4,16 @@ $(document).ready(function(){
   var minutes = $('#minutes');
   var seconds = $('#seconds');
   var breakBtn = $('#break');
+  var pauseBtn = $('#pause');
   var countdown;
 
   start.on('click', startCountdown);
   breakBtn.on('click', takeABreak);
+  pauseBtn.on('click', pausetimer);
+
+    function pausetimer(){
+      clearInterval(countdown);
+    }
 
     function takeABreak(){
       minutes.text('05');
@@ -16,7 +22,7 @@ $(document).ready(function(){
     }
 
   function startCountdown(){
-      var countdown = setInterval(function(){
+       countdown = setInterval(function(){
       var secondsVal = +seconds.text();
       var minutesVal = +minutes.text();
      if(secondsVal === 0 && minutesVal === 0){
