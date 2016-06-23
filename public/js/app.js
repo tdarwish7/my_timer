@@ -45,6 +45,7 @@ $(document).ready(function(){
 
   function startCountdown(msg){
     // by adding msg I made the 'msg' event an object
+       clearInterval(countdown);
         colorChange.addClass('gradient');
        countdown = setInterval(function(){
        var secondsVal = +seconds.text();
