@@ -8,36 +8,51 @@ $(document).ready(function(){
   var countdown;
   var rstBtn = $('#reset');
   var Ding = document.getElementById('sound');
+  var colorChange = $('.gradient');
+
+
+
+
 
   start.on('click', startCountdown);
   breakBtn.on('click', takeABreak);
   pauseBtn.on('click', pausetimer);
   rstBtn.on('click', resetTimer);
 
+
     function resetTimer(){
       minutes.text('25');
       seconds.text('00');
+
     }
 
     function pausetimer(){
       clearInterval(countdown);
+
     }
 
+
+
     function takeABreak(){
+
       minutes.text('00');
       seconds.text('03');
       startCountdown('The break is over!');
 
     }
 
+
+
   function startCountdown(msg){
-    // by adding msg I made '
+    // by adding msg I made the 'msg' event an object
+
        countdown = setInterval(function(){
        var secondsVal = +seconds.text();
        var minutesVal = +minutes.text();
      if(secondsVal === 0 && minutesVal === 0){
        breakBtn.removeClass('disabled');
        breakBtn.removeAttr('disabled');
+       colorChange.removeClass();
        Ding.play();
        clearInterval(countdown);
        if( typeof msg === 'string'){
@@ -63,6 +78,11 @@ $(document).ready(function(){
         }
 
       }
+
+
+
+
     }, 1000);
+
   }
-})
+});
