@@ -7,6 +7,7 @@ $(document).ready(function(){
   var pauseBtn = $('#pause');
   var countdown;
   var rstBtn = $('#reset');
+  var Ding = document.getElementById('sound');
 
   start.on('click', startCountdown);
   breakBtn.on('click', takeABreak);
@@ -37,6 +38,7 @@ $(document).ready(function(){
      if(secondsVal === 0 && minutesVal === 0){
        breakBtn.removeClass('disabled');
        breakBtn.removeAttr('disabled');
+       Ding.play();
        clearInterval(countdown);
        if( typeof msg === 'string'){
           alert(msg);
@@ -61,13 +63,6 @@ $(document).ready(function(){
         }
 
       }
-
-
-
-
-
-
-
     }, 1000);
   }
 })

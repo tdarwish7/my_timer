@@ -1,5 +1,6 @@
 body{
   padding-top: 70px;
+  
 }
 
 #timer{
@@ -14,5 +15,16 @@ body{
 
 #break{
   width: 250px;
+  height: 70px;
+}
+
+#pause{
+  color: black;
+  width: 330px;
+  height: 70px;
+}
+
+#reset{
+  width: 330px;
   height: 70px;
 }
