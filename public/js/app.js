@@ -8,7 +8,7 @@ $(document).ready(function(){
   var countdown;
   var rstBtn = $('#reset');
   var Ding = document.getElementById('sound');
-  var colorChange = $('.gradient');
+  var colorChange = $('body');
 
 
 
@@ -45,14 +45,14 @@ $(document).ready(function(){
 
   function startCountdown(msg){
     // by adding msg I made the 'msg' event an object
-
+        colorChange.addClass('gradient');
        countdown = setInterval(function(){
        var secondsVal = +seconds.text();
        var minutesVal = +minutes.text();
      if(secondsVal === 0 && minutesVal === 0){
        breakBtn.removeClass('disabled');
        breakBtn.removeAttr('disabled');
-       colorChange.removeClass();
+       colorChange.removeClass('gradient');
        Ding.play();
        clearInterval(countdown);
        if( typeof msg === 'string'){
