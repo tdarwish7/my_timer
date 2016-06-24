@@ -6,18 +6,26 @@ $(document).ready(function(){
   var breakBtn = $('#break');
   var pauseBtn = $('#pause');
   var countdown;
+  var pause = 0;
   var rstBtn = $('#reset');
   var Ding = document.getElementById('sound');
   var colorChange = $('body');
-
-
-
+  var Wombo = document.getElementById('lol');
+  var Pear = $('#lolwut');
+  var bluesteel = $('#zoo');
 
 
   start.on('click', startCountdown);
   breakBtn.on('click', takeABreak);
   pauseBtn.on('click', pausetimer);
   rstBtn.on('click', resetTimer);
+  Pear.on('click', playWombo);
+  bluesteel.on('click', Move);
+
+
+  function playWombo(){
+    Wombo.play();
+  }
 
 
     function resetTimer(){
@@ -27,7 +35,18 @@ $(document).ready(function(){
     }
 
     function pausetimer(){
+    if( pause === 0){
+      pause = 1;
       clearInterval(countdown);
+      pauseBtn.text('Resume');
+
+   } else{
+      pause = 0;
+      pauseBtn.text('Pause');
+      startCountdown();
+
+
+    }
 
     }
 
@@ -45,6 +64,7 @@ $(document).ready(function(){
 
   function startCountdown(msg){
     // by adding msg I made the 'msg' event an object
+
        clearInterval(countdown);
         colorChange.addClass('gradient');
        countdown = setInterval(function(){
@@ -87,3 +107,22 @@ $(document).ready(function(){
 
   }
 });
+
+
+
+function Move(){
+  var Rant = document.getElementById('stupid');
+  var elem = document.getElementById('animate');
+  var pos = 0;
+  var id = setInterval(frame, 5);
+  function frame() {
+    if ( pos == 350 ) {
+    clearInterval(id);
+  } else {
+    pos++;
+    elem.style.top = pos + "px";
+    elem.style.left = pos + 'px';
+    Rant.play();
+    }
+  }
+}

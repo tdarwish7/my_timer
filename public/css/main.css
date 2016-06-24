@@ -1,5 +1,10 @@
-#body{
+body{
   padding-top: 70px;
+}
+
+#pear{
+  height: 150px;
+  width: 300px;
 }
 
 .gradient {
@@ -25,8 +30,11 @@
     100% {background-color: green;}
 }
 
+
+
+
 #timer{
-  font-size: 250px;
+  font-size: 200px;
   padding-left: 55px;
 }
 
@@ -50,3 +58,18 @@
   width: 330px;
   height: 70px;
 }
+
+<style>
+#container {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  background: yellow;
+}
+#animate {
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  background-color: red;
+}
+</style>
